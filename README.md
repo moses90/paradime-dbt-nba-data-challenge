@@ -1,7 +1,5 @@
 # dbt™ Data Modeling Challenge - NBA Edition
 
-# ISTVAN MOZES SUBMISSION
-
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Data Sources](#data-sources)
@@ -50,54 +48,61 @@ My analysis leverages five key NBA datasets from Paradime and one seed file from
 
 ## Visualizations
 
-### Historical context of NBA offense
+## Historical context of NBA offense
 There's a lot off buzz recently that the NBA offense has broken, there is no defense anymore, every other game sets a new record for scoring or individual players score 50-60-70 points. I wanted to find out if it can be statistically proven or it is maybe just recency bias.
 
-#### Points per game by Season
+### Points per game by Season
+Average points scored per season.
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/82f7fbef-0c7d-48c5-9cd9-72df7508a0a3)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/fcce9c0b-3bb8-45ae-bde8-e935d803c71a)
 
 *Insights:* 
 We can certainly see an upward trend in the past 25 years and this year is close to the all-time high but it has been higher in the beginning of the 60s. 
 
 ### Pace per game by Season
+Average pace per season. Pace is the total number of possessions a team uses in a game.
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/d3a2d73d-0f1a-446b-98ef-e022ea960f43)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/d5a7e8c6-753d-46ac-a9c7-4c4e2ee9462f)
 
 *Insights:* 
 We can see a similar trend in pace too, it had a decline in the end of the 80s but since it has been increasing.
 
 ### Offensive Efficiency per game by Season
+Average offensive efficiency per season. Offensive efficiency is the number of points a team scores per 100 possessions.
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/674c0e8d-0ba8-45b9-b293-9e1659643a49)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/d0f4814e-2c3e-4db8-a31f-8398fa4c2869)
 
 *Insights:* 
 In the offensive efficiency however,  we can definitely see an increase since the 1985-86 season (Based on the data provided, I couldn't sufficiently calculate the offensive efficiency before the 85-86 season). Within this window this year's offensive efficiency is the all-time high. 
 
 ### Three point attempts and Three point percentage by Season
+Average number of three pointers a team attempts on a game and percentage of how many is made per season.
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/55494075-c7a6-4524-ad00-c71fd78af1e0)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/9f23598a-6fdf-491c-8405-9a837429f976)
 
 *Insights:* 
 Increasing points and offensive efficiency can be directly connected to three point shooting. Since Mike D'Anthony we know that three point shooting is is more effective than two point shooting, so players started to attempt more and more threes, that's what we can see on this chart too. About 30 years ago there was under 10 three point attempts per game, whereas in recent years it is around 36 attempts per game. In the meantime we can see that three point percentage hasn't changed significantly, the league average was always between 33 and 36%, so it is not a surprise to see an increase in points and offensive efficiency.
 
 ### Three point attempts by Position and Season
+Average number of three pointers a team attempts in a season split by positions. Positions were consolidated into three cathegories: guard, forward, center.
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/072d2043-2d98-4d70-b12d-75437cd7835f)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/02e160e7-0338-43f1-8cae-25ea1e4ba043)
 
 *Insights:* 
 For the full context of three point shooting, we need to examine the different positions too. We can see here that every position has increased the 3 point attempts, however, forwards and especially centers did it in a bigger proportion. 40 years ago, in the 1983-84 season guards on average attempted 0.43 three pointers per game, in 2023-24 this number is 4.22 which is 9.81 times higher. Forwards in 83-84 attempted 0.14 threes, in 23-24 it was 3.07 attempts which is 21.93 times higher. Centers though, attempted 0.03 three pointers in the 83-84 season, whereas now it is 1.22 which is a 40.67-time increase.
 
 ### All-time teams in Points per game 
+This visualisation displays the highest scoring teams per season all-time. 
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/75bc4e83-96de-4413-b62b-30335d9fe810)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/c7fea1d5-a518-4eeb-9298-4ac4151abf23)
 
 *Insights:* 
-In the top 20 teams all-time in points per game, 11 is from the past 5 years, in the top 3, 2 is from the 2023-24 season. 
+In the top 20 teams, 11 is from the past 5 years, 7 is from 2023-24 and in the top 3, 2 is from the 2023-24 season. 
 
 ### All-time teams in Offensive Efficiency
+Best teams in offensive efficiency per season all-time.
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/f874fe23-571b-4885-b979-977c6b358f84)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/d2549957-0e5a-4441-8192-1fe149a56e98)
 
 *Insights:* 
 If we check out the same but with offensive efficiency, we see that all top 20 teams are from the past 4 seasons, the top 6 offensive efficiency all-time is from the 2023-24 season.
@@ -121,36 +126,57 @@ If we check out the same but with offensive efficiency, we see that all top 20 t
 *Insights:* 
 
 ### Number of players with 25+ point per games by Season
+Displays the number of players who has an average of 25 or more points per season.
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/eb9c6c38-718f-4c00-9623-218029c5d00b)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/337eb686-8634-4124-b7ed-2d1dfb27f162)
 
 *Insights:* 
 If we dive even a bit deeper in individual performance we can see the number of players with an average of 25 points or higher is also dominating in the past few years. The 5 most are the last 5 years.
 
 ### Number of players with 8+ three point attempts by Season
+Shows the number of players who attempts 8 or more three pointers on average per season.
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/f32557d4-9a7b-4c1f-b256-beb65b850446)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/49bcef22-1828-4576-9b71-0a734ec4e4a2)
 
 *Insights:* 
 Similarly the number of players with an average of 8 or more three point attempts per season shows that 2023-24 season is leading the way with 18 players, and the top 9 places are all seasons after 2015.
 
-### Number of players with 50+/60+ point games by Season
+### Number of 50+/60+ point games by Season
+Number of times a player has scored 50 or more and 60 or more in a season.
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/b0670cb3-83fc-4c51-aef6-5828c21c189c)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/c2e40bb7-9c0f-4fee-8b1d-77237eb0bc97)
 
 *Insights:*
 After all these it is not a surprise to see an increase of the number of outstanding individual performances. The number of 50+ point games by a player was 25 last season and the 2023-24 season is on the 9th place with 13 of them. However, if we see the number of 60+ point games, 2023-24 is again leading the way with 5, which is mind-boggling considering the fact that we have only half season of that for this season.
 
-### defense
+### Defensive stats
+I'd like to mention as a disclaimer that defense is much harder to measure relevantly than offense, especially with box-score statistics. With modern technologies like motion-tracking there are much more advanced techniques to generate defensive statistics. 
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/cd2787a7-4f6a-40a4-a59d-0f130f7860f6)
+### Steals and Blocks per Game by Season
+The first and simplest defensive statistical cathegories an nba fan would meet are steal and block. The following graph shows the average steals and blocks per game per season.
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/473d57bc-8f49-4602-a16d-a88d809cc137)
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/1c2ce08e-fc54-4f2e-bb1d-cbce900ac7b1)
 
-![image](https://github.com/moses90/nba-challange/assets/23437333/53309164-e336-4e3c-b2de-7ae26656088e)
+*Insights:*
+We can see a slight decline in both stats over time. In blocks it is not too significant, in steals this decline is a bit bigger, however I feel these stats are not representing the defensive effort very well.
+
+### Steal and Block percentage by Season
+Steal and block percentage are bit better stats than simple steals and blocks because they are adjusted for pace and volume.
+Steal Percentage is the percentage of estimated opponent possessions that end with a steal by the player while the player is on the court.
+Block percentage is an estimate of the percentage of opponent two-point field goal attempts blocked by the player while he was on the floor.
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/bb9b3de9-5fe2-4085-adc7-a4c5a79454d1)
+
+*Insights:*
+In steal percentage we can see a slight decrease, however, in block percentage we can see an increase over time. 
+
+### All-time team ranking in defensive efficiency
+This displays the teams with the worst defensive efficiencies all-time
+
+![image](https://github.com/moses90/paradime-dbt-nba-data-challenge/assets/23437333/5b5ecf1d-1f08-4450-8eef-a0b75aa8d6b0)
 
 *Insights:* 
-I'd like to mention as a disclaimer that defense is much harder to measure relevantly than offense, especially with box-score statistics. With modern technologies like motion-tracking there are much more advanced techniques to generate defensive statistics. 
+What we can see here is that 11 teams of the 20 worst defensive efficiencies all-time are from the 2023-24 season, 5 is from the 2022-23 season, and the rest is also from the past 5 years.
 
 ### 
 
